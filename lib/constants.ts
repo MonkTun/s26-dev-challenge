@@ -8,9 +8,9 @@ export const navItems = [
 ];
 
 export const rightNavItems = [
-  { src: "/heart.svg", alt: "Heart", href: "#" },
-  { src: "/cart.svg", alt: "Cart", href: "#" },
-  { src: "/user.svg", alt: "Account", href: "#" },
+  { src: "/Heart.svg", alt: "Heart", href: "#" },
+  { src: "/Cart.svg", alt: "Cart", href: "#" },
+  { src: "/User.svg", alt: "Account", href: "#" },
 ];
 
 export const FOOTER_TEXT = "© 2023 Javaria. All rights reserved.";
