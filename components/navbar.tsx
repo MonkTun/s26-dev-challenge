@@ -1,7 +1,8 @@
 import { navItems } from "@/lib/constants";
-import { rightNavItems } from "@/lib/constants";
+//import { rightNavItems } from "@/lib/constants";
 import Link from "next/link";
 import Image from "next/image";
+import { NavbarActions } from "./navbar-actions";
 
 export default function Navbar() {
   return (
@@ -18,7 +19,15 @@ export default function Navbar() {
         <div className="flex justify-start items-center h-17.5 gap-6">
           {/* LOGO */}
           <div className="shrink-0">
-            <Image src="/Logo.svg" alt="Logo" width={30} height={30} priority />
+            <Link href="/">
+              <Image
+                src="/Logo.svg"
+                alt="Logo"
+                width={30}
+                height={30}
+                priority
+              />
+            </Link>
           </div>
 
           {/* NAV */}
@@ -38,17 +47,7 @@ export default function Navbar() {
 
           {/* RIGHT GROUP */}
           <div className="ml-auto hidden md:block">
-            <div className="flex items-center gap-6">
-              {rightNavItems.map((item, index) => (
-                <Link
-                  key={`${item.alt}-${index}`}
-                  href={item.href}
-                  className="hover:opacity-70 transition-opacity"
-                >
-                  <Image src={item.src} alt={item.alt} width={24} height={24} />
-                </Link>
-              ))}
-            </div>
+            <NavbarActions />
           </div>
         </div>
       </div>

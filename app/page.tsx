@@ -1,5 +1,3 @@
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { ShopSection } from "@/components/shop-section";
 import { ServicesSection } from "@/components/services-section";
@@ -12,17 +10,13 @@ export default async function Home(props: {
 
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen mt-[224px] mb-[112px]">
-        <HeroSection />
+      <HeroSection />
 
-        <ShopSection filter={currentFilter} />
+      <ShopSection filter={currentFilter} />
 
-        <div className="w-[1090px] mx-auto h-[1px] bg-[#181818] opacity-33 mt-[112px]" />
+      <div className="w-[1090px] mx-auto h-[1px] bg-[#181818] opacity-33 mt-[112px]" />
 
-        <ServicesSection />
-      </main>
-      <Footer />
+      <ServicesSection />
     </>
   );
 }
