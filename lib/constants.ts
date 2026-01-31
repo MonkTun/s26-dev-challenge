@@ -1,10 +1,10 @@
 export const navItems = [
   { name: "Women", href: "#" },
-  { name: "Women", href: "#" },
-  { name: "Women", href: "#" },
-  { name: "Women", href: "#" },
-  { name: "Women", href: "#" },
-  { name: "Women", href: "#" },
+  { name: "Men", href: "#" },
+  { name: "Kids", href: "#" },
+  { name: "Classics", href: "#" },
+  { name: "Sport", href: "#" },
+  { name: "Sale", href: "#" },
 ];
 
 export const rightNavItems = [
