@@ -17,9 +17,14 @@ export function ProductCard({ product }: ProductCardProps) {
           fill
           className="object-contain p-8 transition-transform group-hover:scale-150"
         />
-        {product.isDiscounted && (
-          <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-            Sale
+        {product.isDiscounted && product.salePrice && (
+          <span className="absolute top-2 left-2 font-sans bg-[#DB4444] text-white text-xs px-2 py-1 rounded">
+            -
+            {(
+              ((product.price - product.salePrice) / product.price) *
+              100
+            ).toFixed(0)}
+            %
           </span>
         )}
 
@@ -34,20 +39,52 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="flex justify-between items-start mt-2">
         <div>
-          <h3 className="font-medium text-sm text-gray-900">{product.name}</h3>
-          <div className="flex items-center gap-1 mt-1">
-            <span className="text-sm font-semibold">
-              ${product.price.toFixed(2)}
-            </span>
+          <h3 className="font-medium text-sm font-sans text-gray-900">
+            {product.name}
+          </h3>
+          <div className="flex items-center gap-2 mt-2">
+            {product.isDiscounted && product.salePrice ? (
+              <>
+                <span className="text-sm font-sans font-semibold text-[#DB4444]">
+                  ${product.salePrice.toFixed(2)}
+                </span>
+                <span className="text-sm font-sans text-gray-400 line-through">
+                  ${product.price.toFixed(2)}
+                </span>
+              </>
+            ) : (
+              <span className="text-sm font-sans font-semibold text-gray-500">
+                ${product.price.toFixed(2)}
+              </span>
+            )}
           </div>
         </div>
       </div>
 
       <div className="flex items-center gap-2 text-xs text-gray-500">
-        <div className="flex items-center">
-          <span>★ {product.ratings}</span>
+        {/* Rating Stars full credit to GEMINI */}
+        <div className="relative flex items-center">
+          <div className="flex text-gray-300">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-sm">
+                ★
+              </span>
+            ))}
+          </div>
+          <div
+            className="absolute top-0 left-0 flex overflow-hidden text-[#FFAD33]"
+            style={{ width: `${((product.ratings || 0) / 5) * 100}%` }}
+          >
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-sm">
+                ★
+              </span>
+            ))}
+          </div>
         </div>
-        <span>({product.reviewCount} reviews)</span>
+        <span className="font-sans font-semibold text-xs text-gray-500">
+          ({product.reviewCount})
+        </span>
       </div>
     </div>
   );
