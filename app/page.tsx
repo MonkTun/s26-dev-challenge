@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { HeroSection } from "@/components/hero-section";
 import { ProductCard } from "@/components/product-card";
-import { Button } from "@/components/ui/button";
 import { MainButton } from "@/components/ui/main-button";
 import { MOCK_PRODUCTS } from "@/lib/constants";
 import Image from "next/image";
@@ -11,15 +11,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className="min-h-screen mt-[224px] mb-[112px]">
-        <section className="relative w-[1090px] h-[578px] bg-gray-100 mx-auto">
-          <Image
-            src="/Hero.svg"
-            alt="Hero Image"
-            fill
-            className="object-cover"
-            priority
-          />
-        </section>
+        <HeroSection />
 
         <section className="w-[1090px] mx-auto mt-16">
           <div className="text-left mb-10 space-x-[36px]">
