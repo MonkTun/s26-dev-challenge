@@ -45,7 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="flex items-center gap-2 text-xs text-gray-500">
         <div className="flex items-center">
-          <span>★ {product.rating}</span>
+          <span>★ {product.ratings}</span>
         </div>
         <span>({product.reviewCount} reviews)</span>
       </div>
