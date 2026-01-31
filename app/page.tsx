@@ -28,7 +28,7 @@ export default function Home() {
               WHAT'S TRENDING
             </MainButton>
           </div>
-          <h2 className="text-2xl font-bold mb-6">New Arrivals</h2>
+          {/*<h2 className="text-2xl font-bold mb-6">New Arrivals</h2>*/}
           <div className="grid grid-cols-4 gap-x-6 gap-y-10">
             {MOCK_PRODUCTS.map((product) => (
               <ProductCard key={product.id} product={product} />
