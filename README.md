@@ -1,4 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## LavaLab Final Round Dev Challenge
+
+Based on the provided Figma Mockup:
+https://www.figma.com/design/JRzzLjCpKp7XIHfo65SC90/S-26-Dev-Challenge?node-id=0-1&t=UPF9Ohx7yeAVfFZw-1
+
+Hosted on:
+https://s26-dev-challenge.vercel.app/
+
+## Tech Stack
+
+### Framework: Next.js (App Router)
+
+**Justification:** detailed routing, server-side rendering for performance/SEO, and easy integration with Vercel for deployment.
+
+### Backend & Auth: Supabase (PostgreSQL)
+
+**Justification:** Provides an instant, scalable PostgreSQL database and seamless Authentication handling (Google OAuth). It simplifies backend complexity, allowing focus on frontend logic.
+
+### Styling: Tailwind CSS & Shadcn UI
+
+**Justification:** Tailwind allows for rapid, pixel-perfect styling directly in markup. Shadcn UI (built on Radix primitives) provides accessible, unstyled components that are easily customizable to match the Figma design.
+
+## Features
+
+- **Responsive Landing Page**: Pixel-perfect implementation of Hero, Shop, and Services sections.
+- **Authentication**: Secure Google OAuth login using Supabase Auth.
+- **Persistent Session State**: UI adapts based on login status (e.g., changes "Sign In" to "My Account").
+- **Interactive UI**:
+  - **Cart Drawer**: Smooth drawer animation for cart interactions.
+  - **Login Modal**: Context-aware login dialog.
+  - **Filter Logic**: URL-based filtering for shop items.
+- **Custom Routing**: Custom 404 page that preserves the main application layout.
 
 ## Getting Started
 
