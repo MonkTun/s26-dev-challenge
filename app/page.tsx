@@ -1,11 +1,18 @@
 import { HeroSection } from "@/components/hero-section";
 import { ShopSection } from "@/components/shop-section";
 import { ServicesSection } from "@/components/services-section";
+import { redirect } from "next/navigation";
 
 export default async function Home(props: {
-  searchParams: Promise<{ filter?: string }>;
+  searchParams: Promise<{ filter?: string; code?: string }>;
 }) {
   const searchParams = await props.searchParams;
+
+  if (searchParams?.code) {
+    redirect(`/auth/callback?code=${searchParams.code}`);
+    // redirect code to fix localhost thinging. THANKS GEMINI!!!
+  }
+
   const currentFilter = searchParams?.filter || "new";
 
   return (
